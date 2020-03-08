@@ -1,0 +1,23 @@
+<%= bootstrap_form_with(model: @site, local: true) do |form| %>
+  <% if @site.errors.any? %>
+    <div id="error_explanation">
+      <div class="alert alert-danger" role="alert">
+        <%= pluralize(@site.errors.count, "error") %> prohibited
+        this site from being saved:
+      </div>
+      <ul>
+        <% @site.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <%= form.text_field :title %>
+  <%= form.text_area :desc %>
+  <%= form.text_field :button_text %>
+  <%= form.text_field :site_url %>
+  <%= form.text_field :img_url_sm %>
+  <%= form.text_field :img_url_lg %>
+  <%= link_to 'Cancel', {controller: 'sites', action: 'admin'}, :class => "btn btn-secondary btn-md back-button" %>
+  <%= form.primary %>
+<% end %>

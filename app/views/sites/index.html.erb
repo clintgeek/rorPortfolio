@@ -1,0 +1,12 @@
+<div class="jumbotron text-white bg-info">
+  <h1 class="display-4">Clintgeek's Portfolio</h1>
+  <p class="lead">Hammered Together in Ruby on Rails and Bootstrap</p>
+  <a href="https://portfolio.clintgeek.com" class="btn btn-secondary btn-md">Vue.js Version</a>
+  <a href="mailto:clintgeek@gmail.com" class="btn btn-primary btn-md">Email Me</a>
+</div>
+
+<div class="card-deck row justify-content-center">
+  <% @sites.each do |site| %>
+    <%= render partial: 'site_card', locals: {site: site, isAdmin: false} %>
+  <% end %>
+</div>

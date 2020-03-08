@@ -1,0 +1,8 @@
+<%= render 'header', title: 'Review Site' %>
+
+<%= link_to 'Remove Site', site_path(@site), method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-secondary btn-md back-button" %>
+<%= link_to 'Edit Site', edit_site_path(@site), :class => "btn btn-secondary btn-md back-button" %>
+
+<div class="row justify-content-center">
+  <%= render partial: 'site_card', locals: {site: @site, isAdmin: false} %>
+</div>

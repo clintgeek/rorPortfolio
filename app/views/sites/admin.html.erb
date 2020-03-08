@@ -1,0 +1,11 @@
+<div class="jumbotron text-white bg-info">
+  <h1 class="display-4">Available Sites</h1>
+  <p class="lead">Admin Area</p>
+  <%= link_to 'New Site', new_site_path, :class => "btn btn-primary btn-lg" %>
+</div>
+
+<div class="card-deck row justify-content-center">
+  <% @sites.each do |site| %>
+    <%= render partial: 'site_card', locals: {site: site, isAdmin: true} %>
+  <% end %>
+</div>
